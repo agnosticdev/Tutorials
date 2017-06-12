@@ -25,10 +25,9 @@ int FindSubstringindex(const std::string *parentstring, const std::string *subst
   	  e++;
   	  if (e == strlen(csubstring)) {
   	  	return indx;
+  	  } else {
+  		  e = 0;
   	  }
-  	} else {
-  		e = 0;
-  	}
   }
   return -1;
 }
