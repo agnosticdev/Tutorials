@@ -31,10 +31,15 @@ enum NetworkResponse: String {
             
             var connectionStatus = "Online"
             var errorInstuction = error?.localizedDescription ?? "Failed to Parse JSON"
-            
-            if errorInstuction == "The Internet connection appears to be offline." {
-                connectionStatus = "Offline"
-                errorInstuction = "Please check you internet connection and try your request again."
+
+            if let nsError = error as NSError? {
+                let errorCode = nsError.code
+                /// -1009 is the offline error code
+                /// HTTP load failed (error code: -1009)
+                if errorCode == -1009 {
+                    connectionStatus = "Offline"
+                    errorInstuction = "Please check you internet connection and try your request again."
+                }
             }
             return (
                 connectionStatus,
