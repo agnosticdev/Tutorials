@@ -38,7 +38,7 @@ enum NetworkResponse: String {
                 /// HTTP load failed (error code: -1009)
                 if errorCode == -1009 {
                     connectionStatus = "Offline"
-                    errorInstuction = "Please check you internet connection and try your request again."
+                    errorInstuction = "Please check your internet connection and try your request again."
                 }
             }
             return (
