@@ -30,7 +30,6 @@ public class DataTask extends AsyncTask<String, Void, String> {
         String connectionInstruction = "";
         String stringBufferData = "";
         URL passedInURL;
-        Log.i("RESULT", "DEBUG doInBackground");
         HttpURLConnection connection = null;
         try {
 
@@ -55,7 +54,7 @@ public class DataTask extends AsyncTask<String, Void, String> {
 
 
         } catch (Exception e) {
-            Log.i("doInBackground", e.toString());
+            Log.i("Exception", e.toString());
             connectionInstruction = e.toString();
             e.printStackTrace();
         }
@@ -70,7 +69,6 @@ public class DataTask extends AsyncTask<String, Void, String> {
      *
      */
     public void onPreExecute() {
-        Log.i("RESULT", "DEBUG onPreExecute");
         this.mainActivityInterface.notifyMainActivity("Connection Status: Checking",
                 "Waiting for connection to finish");
     }
@@ -83,7 +81,6 @@ public class DataTask extends AsyncTask<String, Void, String> {
      * @param String result : returned from the doInBackground method.
      */
     public void onPostExecute(String result) {
-        Log.i("RESULT", "DEBUG onPostExecute " +result );
         String status = "Online";
         if (result.contains("UnknownHostException")) {
             status = "Offline";
