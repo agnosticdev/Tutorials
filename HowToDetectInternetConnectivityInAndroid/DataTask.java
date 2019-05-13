@@ -54,7 +54,6 @@ public class DataTask extends AsyncTask<String, Void, String> {
 
 
         } catch (Exception e) {
-            Log.i("Exception", e.toString());
             connectionInstruction = e.toString();
             e.printStackTrace();
         }
@@ -82,6 +81,7 @@ public class DataTask extends AsyncTask<String, Void, String> {
      */
     public void onPostExecute(String result) {
         String status = "Online";
+        // Not a long term solution, but one technique could be to check for (UnknownHostException).
         if (result.contains("UnknownHostException")) {
             status = "Offline";
         }
