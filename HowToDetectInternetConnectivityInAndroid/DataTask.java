@@ -77,16 +77,16 @@ public class DataTask extends AsyncTask<String, Void, String> {
      * Returns the result from doInBackground and notifies the MainActivity on the main thread.
      * <_, _, String> in the AsyncTask declaration.
      *
-     * @param String result : returned from the doInBackground method.
+     * @param String response : returned from the doInBackground method.
      */
-    public void onPostExecute(String result) {
+    public void onPostExecute(String response) {
         String status = "Online";
         // Not a long term solution, but one technique could be to check for (UnknownHostException).
-        if (result.contains("UnknownHostException")) {
+        if (response.contains("UnknownHostException")) {
             status = "Offline";
         }
         this.mainActivityInterface.notifyMainActivity("Connection Status: " + status,
-                result);
+                response);
     }
 
 }
