@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutomaticLinkConditioner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcR-Ss-HjX">
+                                <rect key="frame" x="20" y="186" width="374" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="o8u-J2-hhu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Send Request">
+                                    <color key="titleColor" red="0.45098039215686275" green="0.50196078431372548" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendDataTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="8cM-H3-4WO"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFm-O5-GF9" userLabel="RequestTimeSuperview">
+                                <rect key="frame" x="20" y="100" width="374" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWY-q1-rts" userLabel="RequestTime:">
+                                        <rect key="frame" x="8" y="8" width="358" height="42"/>
+                                        <color key="backgroundColor" red="0.16470588235294117" green="0.19215686274509802" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Fwi-J3-jKD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.19215686274509802" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="45f-Js-aHh"/>
+                                    <constraint firstItem="EWY-q1-rts" firstAttribute="top" secondItem="IFm-O5-GF9" secondAttribute="top" constant="8" id="6dw-JR-fy8"/>
+                                    <constraint firstAttribute="trailing" secondItem="EWY-q1-rts" secondAttribute="trailing" constant="8" id="88d-bM-bN3"/>
+                                    <constraint firstItem="EWY-q1-rts" firstAttribute="leading" secondItem="IFm-O5-GF9" secondAttribute="leading" constant="8" id="BnE-Zh-mz7"/>
+                                    <constraint firstAttribute="bottom" secondItem="EWY-q1-rts" secondAttribute="bottom" constant="8" id="Vj6-Rp-EkE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EcR-Ss-HjX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ATQ-NA-5RV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EcR-Ss-HjX" secondAttribute="trailing" constant="20" id="UNK-sm-JkX"/>
+                            <constraint firstItem="EcR-Ss-HjX" firstAttribute="top" secondItem="IFm-O5-GF9" secondAttribute="bottom" constant="28" id="Y0y-E7-0f0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IFm-O5-GF9" secondAttribute="trailing" constant="20" id="YCa-Kw-arl"/>
+                            <constraint firstItem="IFm-O5-GF9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="etG-L3-cm2"/>
+                            <constraint firstItem="IFm-O5-GF9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lov-1f-hb1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="requestTimeLabel" destination="EWY-q1-rts" id="bri-2Q-yVj"/>
+                        <outlet property="requestTimeSuperView" destination="IFm-O5-GF9" id="fLE-8f-Bjr"/>
+                        <outlet property="testRequest" destination="EcR-Ss-HjX" id="0bF-ZY-YKg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="94.419642857142847"/>
+        </scene>
+    </scenes>
+</document>
